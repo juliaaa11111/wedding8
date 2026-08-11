@@ -1,0 +1,763 @@
+/* =======================================
+   WEDDING INVITATION
+   Юлия & Виталий
+======================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Montserrat',sans-serif;
+
+background:#f8f6f2;
+
+color:#5d544b;
+
+overflow-x:hidden;
+
+line-height:1.8;
+
+}
+
+/* =========================
+Контейнер
+========================= */
+
+.container{
+
+width:min(1100px,90%);
+
+margin:auto;
+
+}
+
+/* =========================
+Шрифты
+========================= */
+
+h1,h2,h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-weight:400;
+
+}
+
+h1{
+
+font-size:88px;
+
+letter-spacing:2px;
+
+}
+
+h2{
+
+font-size:58px;
+
+margin-bottom:30px;
+
+}
+
+h3{
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+p{
+
+font-size:18px;
+
+}
+
+/* =========================
+Loader
+========================= */
+
+#loader{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:#faf8f4;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:1.4s;
+
+}
+
+.loader-hide{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+.loader-box{
+
+text-align:center;
+
+}
+
+.loader-date{
+
+letter-spacing:6px;
+
+text-transform:uppercase;
+
+font-size:13px;
+
+}
+
+.loader-line{
+
+width:0;
+
+height:2px;
+
+margin:35px auto;
+
+background:#d6c1a2;
+
+animation:loaderLine 2s forwards;
+
+}
+
+.loader-box h1{
+
+font-size:92px;
+
+color:#7d6754;
+
+}
+
+.loader-box span{
+
+display:block;
+
+font-size:55px;
+
+margin:8px;
+
+color:#d3b58c;
+
+}
+
+.loader-subtitle{
+
+margin-top:30px;
+
+font-size:15px;
+
+letter-spacing:5px;
+
+text-transform:uppercase;
+
+}
+
+/* =========================
+Hero
+========================= */
+
+.hero{
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+background:
+
+linear-gradient(
+
+rgba(255,255,255,.55),
+
+rgba(255,255,255,.75)
+
+),
+
+url("assets/images/main.jpg")
+
+center center/cover;
+
+}
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+backdrop-filter:blur(2px);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+width:90%;
+
+max-width:900px;
+
+}
+
+.date{
+
+letter-spacing:7px;
+
+text-transform:uppercase;
+
+margin-bottom:25px;
+
+font-size:14px;
+
+}
+
+.hero h1{
+
+font-size:105px;
+
+line-height:1;
+
+}
+
+.hero h1 span{
+
+display:block;
+
+font-size:70px;
+
+margin:10px;
+
+color:#cfae82;
+
+}
+
+.hero-line{
+
+width:180px;
+
+height:2px;
+
+margin:45px auto;
+
+background:#d6c1a2;
+
+}
+
+.hero-text{
+
+font-size:21px;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.hero-button{
+
+display:inline-block;
+
+margin-top:60px;
+
+padding:18px 42px;
+
+border:1px solid #d6c1a2;
+
+text-decoration:none;
+
+color:#6a594d;
+
+border-radius:50px;
+
+transition:.4s;
+
+background:white;
+
+}
+
+.hero-button:hover{
+
+background:#d6c1a2;
+
+color:white;
+
+}
+
+/* =========================
+Sections
+========================= */
+
+.section{
+
+padding:130px 0;
+
+text-align:center;
+
+}
+
+.section-mini{
+
+letter-spacing:6px;
+
+font-size:13px;
+
+text-transform:uppercase;
+
+color:#c3ab88;
+
+margin-bottom:18px;
+
+}
+
+.gold-line{
+
+width:90px;
+
+height:2px;
+
+margin:35px auto 50px;
+
+background:#d3bb94;
+
+}
+
+.invite-text{
+
+max-width:700px;
+
+margin:25px auto;
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+/* =========================
+Программа дня
+========================= */
+
+.timeline{
+
+max-width:900px;
+
+margin:70px auto;
+
+}
+
+.timeline-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:50px;
+
+padding:45px 0;
+
+border-bottom:1px solid rgba(200,180,150,.3);
+
+}
+
+.time{
+
+min-width:180px;
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:60px;
+
+color:#c9ab84;
+
+}
+
+.event{
+
+text-align:left;
+
+flex:1;
+
+}
+
+.event p{
+
+margin:6px 0;
+
+}
+
+.map-btn{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:12px 28px;
+
+border:1px solid #d2b58d;
+
+border-radius:40px;
+
+text-decoration:none;
+
+color:#6f5d50;
+
+transition:.35s;
+
+}
+
+.map-btn:hover{
+
+background:#d2b58d;
+
+color:#fff;
+
+}
+
+/* =========================
+Пожелания
+========================= */
+
+.wish-card{
+
+background:rgba(255,255,255,.75);
+
+backdrop-filter:blur(15px);
+
+padding:60px;
+
+border-radius:30px;
+
+max-width:800px;
+
+margin:auto;
+
+box-shadow:0 15px 45px rgba(0,0,0,.08);
+
+}
+
+.wish-card p{
+
+margin:20px 0;
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+/* =========================
+Footer
+========================= */
+
+footer{
+
+padding:140px 20px;
+
+text-align:center;
+
+background:#f3efe8;
+
+}
+
+.footer-mini{
+
+letter-spacing:5px;
+
+font-size:13px;
+
+text-transform:uppercase;
+
+margin-bottom:20px;
+
+color:#b79b76;
+
+}
+
+.footer-names{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:80px;
+
+margin-top:45px;
+
+}
+
+.footer-names span{
+
+display:block;
+
+font-size:55px;
+
+margin:12px;
+
+color:#d4b58b;
+
+}
+
+.footer-date{
+
+margin-top:35px;
+
+font-size:20px;
+
+letter-spacing:4px;
+
+}
+
+/* =========================
+Музыка
+========================= */
+
+#musicBtn{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:62px;
+
+height:62px;
+
+border:none;
+
+border-radius:50%;
+
+background:white;
+
+font-size:26px;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+z-index:999;
+
+transition:.3s;
+
+}
+
+#musicBtn:hover{
+
+transform:scale(1.08);
+
+}
+
+/* =========================
+Лепестки
+========================= */
+
+.petals{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:1;
+
+}
+
+.petals span{
+
+position:absolute;
+
+top:-120px;
+
+width:18px;
+
+height:18px;
+
+background:#f3d8d7;
+
+opacity:.45;
+
+border-radius:60% 40% 70% 30%;
+
+animation:petalFall linear infinite;
+
+}
+
+.petals span:nth-child(1){left:5%;animation-duration:15s;}
+.petals span:nth-child(2){left:15%;animation-duration:22s;}
+.petals span:nth-child(3){left:28%;animation-duration:17s;}
+.petals span:nth-child(4){left:40%;animation-duration:24s;}
+.petals span:nth-child(5){left:52%;animation-duration:18s;}
+.petals span:nth-child(6){left:64%;animation-duration:21s;}
+.petals span:nth-child(7){left:76%;animation-duration:26s;}
+.petals span:nth-child(8){left:86%;animation-duration:19s;}
+.petals span:nth-child(9){left:93%;animation-duration:23s;}
+.petals span:nth-child(10){left:98%;animation-duration:20s;}
+
+/* =========================
+Анимации
+========================= */
+
+.fade{
+
+opacity:0;
+
+transform:translateY(50px);
+
+transition:1.2s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:none;
+
+}
+
+@keyframes loaderLine{
+
+to{
+
+width:170px;
+
+}
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:translateY(-120px) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(115vh) translateX(90px) rotate(720deg);
+
+}
+
+}
+
+/* =========================
+Мобильная версия
+========================= */
+
+max-width:768px{
+
+h1{
+
+font-size:56px;
+
+}
+
+.hero h1{
+
+font-size:58px;
+
+}
+
+.hero h1 span{
+
+font-size:42px;
+
+}
+
+h2{
+
+font-size:38px;
+
+}
+
+.timeline-item{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.event{
+
+text-align:center;
+
+}
+
+.time{
+
+font-size:48px;
+
+}
+
+.wish-card{
+
+padding:35px 25px;
+
+}
+
+.footer-names{
+
+font-size:54px;
+
+}
+
+.footer-names span{
+
+font-size:36px;
+
+}
+
+.hero-button{
+
+padding:15px 28px;
+
+}
+
+}
